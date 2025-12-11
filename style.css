@@ -131,7 +131,7 @@ body {
   background-color: white;
   display: flex;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
   position: absolute;
   left: 50%;
   transform: translateX(-50%) translateY(65px);
@@ -159,7 +159,7 @@ body {
 }
 
 .info .card {
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(255,255,255,0.2) !important;
   color: white !important;
   border: 1px solid #999;
 }
@@ -167,7 +167,7 @@ body {
 .info .card-header {
   border-bottom: 1px solid #999;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  letter-spacing: .1rem;
 }
 
 .info .card-body {
@@ -176,7 +176,7 @@ body {
 
 .info .card-footer {
   border-top: 1px solid #999;
-  font-size: 0.9rem;
+  font-size: .9rem;
   font-weight: 300;
 }
 
@@ -193,7 +193,7 @@ body {
 .gifts span {
   text-transform: uppercase;
   color: #666;
-  font-size: 0.9rem;
+  font-size: .9rem;
   letter-spacing: 1px;
   display: block;
   margin-bottom: 1rem;
@@ -229,16 +229,6 @@ body {
   position: relative;
 }
 
-.timeline li::before,
-.timeline li::after {
-  content: '';
-  display: table;
-}
-
-.timeline li::after {
-  clear: both;
-}
-
 .timeline li .timeline-image {
   width: 160px;
   height: 160px;
@@ -257,51 +247,9 @@ body {
   float: left;
   border: 1px solid #ccc;
   padding: 2rem;
-  position: relative;
   border-radius: 8px;
   background-color: #fff;
-}
-
-.timeline li .timeline-panel::before {
-  content: '';
-  display: inline-block;
-  position: absolute;
-  border-top: 15px solid transparent;
-  border-left: 15px solid #ccc;
-  border-right: 0 solid #ccc;
-  border-bottom: 15px solid transparent;
-  top: 80px;
-  right: -15px;
-}
-
-.timeline li .timeline-panel::after {
-  content: '';
-  position: absolute;
-  display: inline-block;
-  border-top: 14px solid transparent;
-  border-left: 14px solid #fff;
-  border-right: 0 solid #fff;
-  border-bottom: 14px solid transparent;
-  top: 81px;
-  right: -13px;
-}
-
-.timeline li.timeline-inverted .timeline-panel {
-  float: right;
-}
-
-.timeline li.timeline-inverted .timeline-panel::before {
-  border-left-width: 0;
-  border-right-width: 15px;
-  left: -15px;
-  right: auto;
-}
-
-.timeline li.timeline-inverted .timeline-panel::after {
-  border-left-width: 0;
-  border-right-width: 14px;
-  left: -13px;
-  right: auto;
+  position: relative;
 }
 
 .gallery {
@@ -330,12 +278,6 @@ body {
   border: 1px solid var(--pink);
 }
 
-.rsvp button:hover {
-  background-color: white;
-  color: var(--pink);
-  border: 1px solid white;
-}
-
 footer {
   padding: 3rem;
   background-color: var(--pink);
@@ -355,7 +297,7 @@ footer a:hover {
 footer li {
   list-style: none;
   display: inline;
-  margin: 0.5rem;
+  margin: .5rem;
 }
 
 .audio-icon-wrapper {
@@ -367,7 +309,7 @@ footer li {
   right: 2rem;
   cursor: pointer;
   color: white;
-  opacity: 0.5;
+  opacity: .5;
   mix-blend-mode: difference;
   animation: rotating 4s linear infinite;
   transform-origin: center;
@@ -378,118 +320,84 @@ footer li {
 }
 
 @keyframes rotating {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
 }
 
-/* Media Query */
-/* Extra large */
-@media (max-width: 1200px) {
-  .home .heart {
-    transform: translateX(-50%) translateY(45px);
-  }
+/* ==============================
+   RESPONSIVE FONT
+============================== */
+@media (max-width:1200px){
+  .home .heart { transform: translateX(-50%) translateY(45px); }
 }
 
-/* laptop */
-@media (max-width: 992px) {
-  html {
-    font-size: 75%;
-  }
+@media (max-width:992px){
+  html { font-size: 75%; }
+  .home .heart { display:none; }
+}
 
+@media (max-width:768px){
+  html { font-size: 65%; }
+}
+
+@media (max-width:576px){
+  html { font-size: 60%; }
+}
+
+/* =======================================================
+   🎯 FINAL FIX — RESPONSIVE COUNTDOWN
+======================================================= */
+.simply-countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+/* Desktop */
+.simply-countdown > .simply-section {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: var(--pink);
+  color: white;
+  box-shadow: var(--shadow);
+  padding: 1.4rem 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.simply-countdown .simply-amount {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.simply-countdown .simply-word {
+  font-size: 1rem;
+}
+
+/* Tablet */
+@media (max-width:768px){
   .simply-countdown > .simply-section {
-    padding: 70px;
+    width: 100px;
+    height: 100px;
+    padding: 1.2rem 0 !important;
   }
 
-  .home .heart {
-    display: none;
-  }
-
-  .timeline::before {
-    left: 60px;
-  }
-
-  .timeline li .timeline-image {
-    left: 15px;
-    margin-left: 45px;
-    top: 16px;
-  }
-
-  .timeline li .timeline-panel {
-    width: calc((100% - 200px));
-    float: right;
-  }
-
-  .timeline li .timeline-panel::before {
-    border-left-width: 0;
-    border-right-width: 15px;
-    left: -15px;
-    right: auto;
-  }
-
-  .timeline li .timeline-panel::after {
-    border-left-width: 0;
-    border-right-width: 14px;
-    left: -13px;
-    right: auto;
-  }
+  .simply-countdown .simply-amount { font-size: 1.6rem; }
 }
 
-/* tablet */
-@media (max-width: 768px) {
-  html {
-    font-size: 65%;
-  }
-
+/* HP */
+@media (max-width:576px){
   .simply-countdown > .simply-section {
-    padding: 60px;
-    margin: 5px;
-  }
-
-  .mynavbar .nav-link {
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .sticky-top {
-    overflow: hidden;
-  }
-
-  .timeline li .timeline-image {
-    width: 140px;
-    height: 140px;
-  }
-}
-
-/* mobile phone */
-@media (max-width: 576px) {
-  html {
-    font-size: 60%;
-  }
-
-  .simply-countdown > .simply-section {
-    padding: 45px;
-    margin: 3px;
-  }
-
-  .timeline li .timeline-image {
     width: 80px;
     height: 80px;
+    padding: 1rem 0 !important;
   }
 
-  .timeline li .timeline-panel {
-    width: 65%;
-    transform: translateX(-20px);
-  }
-
-  .timeline li .timeline-panel::before {
-    top: 30px;
-  }
-
-  .timeline li .timeline-panel::after {
-    top: 31px;
-  }
+  .simply-countdown .simply-amount { font-size: 1.4rem; }
+  .simply-countdown .simply-word { font-size: .85rem; }
 }
