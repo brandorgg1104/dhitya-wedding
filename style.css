@@ -347,69 +347,6 @@ footer li {
   html { font-size: 60%; }
 }
 
-/* =======================================================
-   COUNTDOWN HERO FINAL
-   Hari di atas tombol
-   Jam – Menit – Detik di bawah tombol
-======================================================= */
-
-/* Wrapper countdown + tombol */
-.countdown-wrapper{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Countdown jadi grid */
-.countdown-wrapper .simply-countdown{
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
-  justify-items: center;
-}
-
-/* HARI (item pertama) */
-.countdown-wrapper 
-.simply-countdown 
-.simply-section:first-child{
-  grid-column: 1 / -1;      /* full baris */
-  width: 120px;
-  height: 120px;
-  margin-bottom: .4rem;
-}
-
-/* JAM MENIT DETIK */
-.countdown-wrapper 
-.simply-countdown 
-.simply-section:not(:first-child){
-  width: 90px;
-  height: 90px;
-}
-
-/* Tombol di tengah */
-.open-btn{
-  margin: .8rem 0 1rem !important;
-}
-
-/* ======================
-   RESPONSIVE (HP)
-====================== */
-@media (max-width:576px){
-  .countdown-wrapper 
-  .simply-countdown 
-  .simply-section:first-child{
-    width: 100px;
-    height: 100px;
-  }
-
-  .countdown-wrapper 
-  .simply-countdown 
-  .simply-section:not(:first-child){
-    width: 80px;
-    height: 80px;
-  }
-}
-
 .home-video {
   position: absolute;
   inset: 0;
@@ -463,3 +400,59 @@ footer li {
   background-color: rgba(255,255,255,0.15) !important;
   backdrop-filter: blur(4px);
 }
+/* ================================
+   COUNTDOWN HERO FIX FINAL
+   Hari di atas tombol
+   Jam–Menit–Detik di bawah
+================================ */
+
+/* wrapper */
+.countdown-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* container countdown */
+.countdown-wrapper .simply-countdown{
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+/* SEMUA item default */
+.countdown-wrapper .simply-section{
+  order: 2;
+}
+
+/* HARI (item pertama) */
+.countdown-wrapper .simply-section:first-child{
+  order: 1;
+  width: 120px;
+  height: 120px;
+}
+
+/* tombol */
+.open-btn{
+  order: 3;
+  margin: 1rem 0;
+}
+
+/* JAM MENIT DETIK */
+.countdown-wrapper .simply-section:not(:first-child){
+  order: 4;
+  width: 90px;
+  height: 90px;
+}
+
+/* ======================
+   RESPONSIVE HP
+====================== */
+@media (max-width:576px){
+  .countdown-wrapper .simply-section:first-child{
+    width: 100px;
+    height: 100px;
+  }
+
+  .countdown-wrapper .simply-section:not(:first-c
