@@ -435,14 +435,16 @@ footer li {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: brightness(0.9) contrast(1.05);
+  filter: brightness(1.15) contrast(1.1) saturate(1.05);  
 }
 .info::after{
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55);
-  z-index: 1;
+   background: linear-gradient(
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.45)
+  );
 }
 .info .container{
   position: relative;
