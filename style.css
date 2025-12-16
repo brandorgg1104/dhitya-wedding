@@ -537,12 +537,12 @@ footer li {
     height: 85px;
   }
   .countdown-top .simply-section{
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
   }
   .countdown-top .simply-amount,
   .countdown-bottom .simply-amount{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
   .countdown-top .simply-word,
   .countdown-bottom .simply-word{
