@@ -471,6 +471,84 @@ footer li {
   margin-top: 1rem;
 }
 
+/* ===========================
+   COUNTDOWN BUBBLE (setelah dipisah)
+=========================== */
+
+/* layout container hari & jam-menit-detik */
+.countdown-top,
+.countdown-bottom{
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.countdown-top{ margin-bottom: 1rem; }
+.countdown-bottom{ margin-top: 1rem; }
+
+/* Bubble style untuk semua section */
+.countdown-top .simply-section,
+.countdown-bottom .simply-section{
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+}
+
+/* biar tulisan center */
+.countdown-top .simply-section > div,
+.countdown-bottom .simply-section > div{
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* angka */
+.countdown-top .simply-amount,
+.countdown-bottom .simply-amount{
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* kata: hari/jam/menit/detik */
+.countdown-top .simply-word,
+.countdown-bottom .simply-word{
+  display: block;
+  font-size: 1rem;
+}
+
+/* Hari sedikit lebih besar (opsional, bagus) */
+.countdown-top .simply-section{
+  width: 140px;
+  height: 140px;
+}
+
+/* Responsif HP */
+@media (max-width:576px){
+  .countdown-bottom .simply-section{
+    width: 85px;
+    height: 85px;
+  }
+  .countdown-top .simply-section{
+    width: 110px;
+    height: 110px;
+  }
+  .countdown-top .simply-amount,
+  .countdown-bottom .simply-amount{
+    font-size: 1.5rem;
+  }
+  .countdown-top .simply-word,
+  .countdown-bottom .simply-word{
+    font-size: .85rem;
+  }
+}
 
                                          
                                          
