@@ -27,16 +27,24 @@
 <body>
 
   <section id="hero"
-    class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
-    <main>
-      <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
-      <h1>Dhitya & Kamu</h1>
-      <p>Akan melangsungkan resepsi pernikahan dalam:</p>
-      <div class="simply-countdown"></div>
-      <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
-    </main>
+  class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
 
-  </section>
+  <main>
+    <h4>Kepada <span>Bapak/Ibu/Saudara/i, </span></h4>
+    <h1>Dhitya & Kamu</h1>
+    <p>Akan melangsungkan resepsi pernikahan dalam:</p>
+
+    <div class="countdown-wrapper">
+      <div class="simply-countdown"></div>
+
+      <a href="#home" class="btn btn-lg mt-3 open-btn" onClick="enableScroll()">
+        Lihat Undangan
+      </a>
+    </div>
+  </main>
+
+</section>
+
 
   <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
     <div class="container">
@@ -513,7 +521,7 @@
     const urlParams = new URLSearchParams(window.location.search);
     const nama = urlParams.get('n') || '';
     const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
-    const namaContainer = document.querySelector('.hero h4 span');
+    const namaContainer = document.querySelector('. h4 span');
     namaContainer.innerText = `${pronoun} ${nama},`.replace(/ ,$/, ',');
 
     document.querySelector('#nama').value = nama;
