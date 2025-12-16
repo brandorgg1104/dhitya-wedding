@@ -42,8 +42,8 @@
 
 <div class="countdown-bottom"></div>
 
-<!-- container asli (boleh kosong) -->
 <div class="simply-countdown"></div>
+
 
 
   </main>
@@ -438,6 +438,35 @@
       },
     });
   </script>
+<script>
+  // PINDAHKAN COUNTDOWN (HARI ATAS, JAM/MENIT/DETIK BAWAH)
+  setTimeout(() => {
+    const src = document.querySelector('.simply-countdown');
+    const top = document.querySelector('.countdown-top');
+    const bottom = document.querySelector('.countdown-bottom');
+
+    if (!src || !top || !bottom) return;
+
+    const sections = src.querySelectorAll('.simply-section');
+    if (sections.length !== 4) return;
+
+    // HARI ke atas
+    top.appendChild(sections[0]);
+
+    // JAM, MENIT, DETIK ke bawah
+    bottom.appendChild(sections[1]);
+    bottom.appendChild(sections[2]);
+    bottom.appendChild(sections[3]);
+
+    // hapus container lama
+    src.remove();
+  }, 0);
+</script>
+<script>
+  const stickyTop = document.querySelector('.sticky-top');
+  const offcanvas = document.querySelector('.offcanvas');
+  ...
+</script>
 
   <script>
     const stickyTop = document.querySelector('.sticky-top');
