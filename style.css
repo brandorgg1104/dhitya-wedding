@@ -455,4 +455,23 @@ footer li {
     height: 100px;
   }
 
-  .countdown-wrapper .simply-section:not(:first-c
+.countdown-top,
+.countdown-bottom{
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.countdown-top{
+  margin-bottom: 1rem;
+}
+
+.countdown-bottom{
+  margin-top: 1rem;
+}
+
+
+                                         
+                                         
+                                        
