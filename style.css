@@ -348,61 +348,66 @@ footer li {
 }
 
 /* =======================================================
-   🎯 FINAL FIX — RESPONSIVE COUNTDOWN
+   COUNTDOWN HERO FINAL
+   Hari di atas tombol
+   Jam – Menit – Detik di bawah tombol
 ======================================================= */
-.simply-countdown {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-}
 
-/* Desktop */
-.simply-countdown > .simply-section {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: var(--pink);
-  color: white;
-  box-shadow: var(--shadow);
-  padding: 1.4rem 0 !important;
+/* Wrapper countdown + tombol */
+.countdown-wrapper{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
-.simply-countdown .simply-amount {
-  font-size: 2rem;
-  font-weight: bold;
+/* Countdown jadi grid */
+.countdown-wrapper .simply-countdown{
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  justify-items: center;
 }
 
-.simply-countdown .simply-word {
-  font-size: 1rem;
+/* HARI (item pertama) */
+.countdown-wrapper 
+.simply-countdown 
+.simply-section:first-child{
+  grid-column: 1 / -1;      /* full baris */
+  width: 120px;
+  height: 120px;
+  margin-bottom: .4rem;
 }
 
-/* Tablet */
-@media (max-width:768px){
-  .simply-countdown > .simply-section {
+/* JAM MENIT DETIK */
+.countdown-wrapper 
+.simply-countdown 
+.simply-section:not(:first-child){
+  width: 90px;
+  height: 90px;
+}
+
+/* Tombol di tengah */
+.open-btn{
+  margin: .8rem 0 1rem !important;
+}
+
+/* ======================
+   RESPONSIVE (HP)
+====================== */
+@media (max-width:576px){
+  .countdown-wrapper 
+  .simply-countdown 
+  .simply-section:first-child{
     width: 100px;
     height: 100px;
-    padding: 1.2rem 0 !important;
   }
 
-  .simply-countdown .simply-amount { font-size: 1.6rem; }
-}
-
-/* HP */
-@media (max-width:576px){
-  .simply-countdown > .simply-section {
+  .countdown-wrapper 
+  .simply-countdown 
+  .simply-section:not(:first-child){
     width: 80px;
     height: 80px;
-    padding: 1rem 0 !important;
   }
-
-  .simply-countdown .simply-amount { font-size: 1.4rem; }
-  .simply-countdown .simply-word { font-size: .85rem; }
 }
 
 .home-video {
