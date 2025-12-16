@@ -409,13 +409,14 @@ footer li {
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  filter: brightness(1.1) contrast(1.05) saturate(1.05);
 }
 
 .home::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.25);
   z-index: 1;
 }
 
