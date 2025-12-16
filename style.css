@@ -550,6 +550,52 @@ footer li {
   }
 }
 
+/* =========================
+   TIMELINE FIX (MOBILE)
+========================= */
+@media (max-width: 768px) {
+  .timeline::before{
+    left: 30px;           /* garis pindah ke kiri */
+  }
+
+  .timeline li{
+    margin-bottom: 2rem;
+    min-height: 160px;
+  }
+
+  .timeline li .timeline-image{
+    left: 30px;           /* foto pindah ke kiri */
+    transform: translateX(-50%);
+    width: 90px;
+    height: 90px;
+  }
+
+  .timeline li .timeline-panel{
+    width: calc(100% - 90px); /* panel ambil sisa lebar */
+    float: right;             /* panel ke kanan */
+    padding: 1.2rem;
+  }
+
+  /* versi "inverted" jangan beda di mobile */
+  .timeline li.timeline-inverted .timeline-panel{
+    float: right;
+  }
+}
+
+@media (max-width: 576px) {
+  .timeline::before{ left: 26px; }
+
+  .timeline li .timeline-image{
+    left: 26px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .timeline li .timeline-panel{
+    width: calc(100% - 80px);
+    padding: 1rem;
+  }
+}
                                          
                                          
                                         
